@@ -1,0 +1,2 @@
+#!/bin/zsh
+IMG=~/Pictures/Screenshots/Screenshots-Wayshot/$(date +%F_%T).png && wayshot -c -f $IMG && wl-copy < $IMG

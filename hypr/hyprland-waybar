@@ -1,0 +1,7 @@
+#!/bin/zsh
+env XDG_CURRENT_DESKTOP="Unity" waybar \
+    -c ~/.config/waybar/hyprland/config \
+    -s ~/.config/waybar/hyprland/style.css &
+env XDG_CURRENT_DESKTOP="Unity" waybar \
+    -c ~/.config/waybar/hyprland/config-bot \
+    -s ~/.config/waybar/hyprland/style.css

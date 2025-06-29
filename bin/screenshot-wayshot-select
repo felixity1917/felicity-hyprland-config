@@ -1,0 +1,3 @@
+#!/bin/zsh
+# IMG=~/Pictures/Screenshots/Screenshots-Slurp/$(date +%F_%T).png && wayshot -s "$(slurp -b \#00000077 -c \#89b4fa -F IosevkaTermSLab Nerd Font -w 2)" -f $IMG && wl-copy < $IMG
+IMG=~/Pictures/Screenshots/Screenshots-Slurp/$(date +%F_%T).png && wayshot -s "$(slurp -b \#00000077 -c \#00000000 -F IosevkaTermSLab Nerd Font -w 2)" -f $IMG && wl-copy < $IMG

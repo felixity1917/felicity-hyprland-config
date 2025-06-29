@@ -1,0 +1,75 @@
+#!/bin/zsh
+
+# Define Smart Autostart Command
+run() {
+  if ! pgrep -f "$1" ;
+  then
+    "$@"
+  fi
+}
+
+# Processes
+
+## Setup GTK Theme Environment Variables
+bash ~/gtkset.sh &
+
+## Setup XWayland
+xhost si:localuser:root &
+
+## Setup Display
+# wlr-randr --output eDP --preferred &
+way-displays >/tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
+
+## Fancy Wallpaper Daemon with Animation Support
+rm ~/.cache/swww/eDP-1 &
+swww-daemon &
+# sleep 1s && swww img ~/Pictures/CTP-Walls/ctp-wall-arch.png --transition-type wipe --transition-angle 30 --transition-step 120 &
+sleep 1s && swww img ~/Pictures/Wallpapers/toriiWallpaper.png --transition-type grow --transition-pos 0.854,0.977 --transition-step 120 &
+
+## Polkit GUI
+run /usr/lib/polkit-kde-authentication-agent-1 &
+
+## XSettings for XWayland
+run xsettings &
+
+## Network Manager Applet
+run nm-applet --indicator &
+
+## Blutooth Manager Applet
+run blueman-applet &
+
+## Notifications Daemon
+run mako &
+
+## Playerctld
+run playerctld &
+
+## XFCE4-AppFinder
+run xfce4-appfinder --daemon &
+
+## MPD Notifications
+# sleep 10 && run musnify-mpd &
+
+## mpDris2 + MPD Notifications
+# sleep 10 && run mpDris2 &
+
+## MPD to LibreFM scrobbler
+# sleep 10 && run mpdas &
+
+## Emacs
+# run emacs --daemon &
+
+## Mail
+# run hydroxide imap &
+
+## Android to Linux Notifications Server
+# run a2ln &
+
+## Low Battery Notifier
+# ~/Scripts/bat_notifier.sh &
+
+## Startup Sound
+# mpv --no-video ~/Core/borealis_startup_4.mp3 &
+
+## Fin
+sleep 5 && notify-send  "Willkommen" "Bei Arch Linux in Hyprland!"

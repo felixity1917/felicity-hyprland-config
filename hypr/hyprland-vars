@@ -1,0 +1,51 @@
+#!/bin/sh
+
+export WAYLAND_DISPLAY=wayland-1
+
+# export WLR_RENDERER=vulkan
+# export WLR_RENDERER=gles2
+
+# Cursor
+export XCURSOR_SIZE=24
+export VDPAU_DRIVER=nvidia
+export LIBVA_DRIVER_NAME=nvidia
+# export VDPAU_DRIVER=radeonsi
+# export LIBVA_DRIVER_NAME=radeonsi
+
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=Hyprland
+
+# Cursor Fix
+# export WLR_NO_HARDWARE_CURSORS=1
+
+# Force Prime Render Offload Globally
+# export __NV_PRIME_RENDER_OFFLOAD=1
+# export __GLX_VENDOR_LIBRARY_NAME=nvidia
+# export __VK_LAYER_NV_optimus=NVIDIA_only
+
+# Enable Firefox Wayland
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_DISABLE_RDD_SANDBOX=1
+
+# Important Environment Variables
+export EGL_PLATFORM=wayland
+export GDK_BACKEND=wayland
+export GBM_BACKEND=nvidia-drm
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=kde
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+# export QT_WAYLAND_FORCE_DPI=physical
+# export ELM_DISPLAY=wl
+# export ECORE_EVAS_ENGINE=wayland_egl
+# export ELM_ENGINE=wayland_egl
+# export SDL_VIDEODRIVER=wayland
+# export SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so
+# export CLUTTER_BACKEND=wayland
+
+# Fix Java Stuff
+# export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Misc
+export QUTE_SKIP_WAYLAND_CHECK=1
+export BEMENU_BACKEND=wayland
