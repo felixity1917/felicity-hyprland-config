@@ -1,3 +1,4 @@
+// Author: Felicity Iris
 {
     "layer": "bottom", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
@@ -5,7 +6,6 @@
     "width": 1900, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    // "modules-left": ["custom/mpd-label", "custom/mpdprev", "custom/mpdtoggle", "custom/mpdnext", "mpd", "custom/media"],
     "modules-left": [ "user", "custom/desktopname" ],
     "modules-center": [ "custom/spotify" ],
     "modules-right": [ "battery", "backlight", "pulseaudio", "cpu", "memory", "disk", "temperature" ],
@@ -51,7 +51,7 @@
       },
 
     "mpd": {
-        "server": "/home/kefi/.config/mpd/socket",
+        "server": "$XDG_CONFIG_HOME/mpd/socket",
         
         //"format": "  MPD {stateIcon} {consumeIcon}{repeatIcon}{singleIcon} | [{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | {filename}",
         //"format-paused": "  MPD {stateIcon} {consumeIcon}{repeatIcon}{singleIcon} | [{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | {filename}",
