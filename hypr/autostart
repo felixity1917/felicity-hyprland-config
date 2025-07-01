@@ -41,6 +41,9 @@ run blueman-applet &
 ## Notifications Daemon
 run mako &
 
+## OSD Daemon
+run swayosd-server &
+
 ## Playerctld
 run playerctld &
 
