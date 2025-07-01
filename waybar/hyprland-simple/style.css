@@ -1,0 +1,671 @@
+/* Define Catppuccin Mocha colors as CSS variables */
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+* { 
+	border-radius: 10px;
+	min-height: 0px;
+	font-family: Google Sans Display;
+	font-size: 13px;
+}
+
+window#waybar {
+	background-color: transparent;
+	color: #f5c2e7;
+	text-shadow: 0 0 3px #f5c2e7;
+	transition-property: background-color;
+	transition-duration: 1s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	box-shadow: 0 0 0;
+}
+
+#window { 
+	margin: 5px;
+	background-color: #11111b;
+	/* background-color: ; */
+	border-radius: 10px;
+	border: 3px solid #f5c2e7;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#window:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#workspaces {
+	background-color: #11111b;
+	margin: 5px;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: 10px;
+	border: 3px solid #f5c2e7;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#workspaces:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#workspaces button {
+	color: #89b4fa;
+	text-shadow: 0 0 3px #89b4fa;
+	padding-left: 0px;
+	padding-right: 0px;
+	transition: 0.5s;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+#workspaces button:hover {
+	transition:0.5s;
+	color: #fab387;
+	background: #11111b;
+	box-shadow: inherit;
+	text-shadow: 0 0 3px #fab387;
+}
+
+#workspaces button.visible {
+	color: #89b4fa;
+	text-shadow: 0 0 3px #89b4fa;
+	transition: 0.5s;
+}
+
+#workspaces button.visible:hover {
+	color: #fab387;
+	text-shadow: 0 0 3px #fab387;
+	transition: 0.5s;
+}
+
+#workspaces button.urgent {
+	color: #f38ba8;
+	text-shadow: 0 0 3px #f38ba8;
+	transition: 0.5s;
+}
+
+#workspaces button.urgent:hover {
+	color: #fab387;
+	text-shadow: 0 0 3px #fab387;
+	transition: 0.5s;
+}
+
+#workspaces button.active {
+	color: #a6e3a1;
+	text-shadow: 0 0 3px #a6e3a1;
+	transition: 0.5s;
+}
+
+#workspaces button.active:hover {
+	color: #fab387;
+	background: #11111b;
+	text-shadow: 0 0 3px #fab387;
+	transition: 0.5s;
+}
+
+/*
+#workspaces button.empty {
+	color: #45475a;
+	text-shadow: 0 0 3px #45475a;
+	transition: 0.5s;
+}
+
+#workspaces button.empty:hover {
+	color: #fab387;
+	background: #11111b;
+	text-shadow: 0 0 3px #fab387;
+	transition: 0.5s;
+}
+*/
+
+/*Top Bar*/
+
+#network {
+	color: #94e2d5;
+	text-shadow: 0 0 3px #94e2d5;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#network:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+    text-shadow: 0 0 3px #f38ba8;
+}
+
+#clock {
+	color: #f9e2af;
+	text-shadow: 0 0 3px #f9e2af;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#clock:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#tray {
+	color: #89b4fa;
+	/* text-shadow: 0 0 0px #000000; */
+	font-family: Cantarell;
+	min-height: 0;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	margin-right: 0px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#tray:hover {
+	/* background-color: #2a2431; */
+	transition: 0.5s;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: #f38ba8;
+    text-shadow: 0 0 3px #f38ba8;
+}
+
+#custom-notif {
+  font-size: 17px;
+  color: #89b4fa;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-right: 3px;
+}
+
+/*Bottom Bar*/
+
+#battery {
+	color: #cdd6f4;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#battery:hover {
+  background-color: #2a2431;
+  transition: 0.5s;
+}
+
+#battery.charging, #battery.plugged, #battery.full {
+    color: #26A65B;
+    text-shadow: 0 0 3px #26a65b;
+}
+
+@keyframes blink {
+    to {
+        color: #cdd6f4;
+        text-shadow: 0 0 3px #cdd6f4;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    text-shadow: 0 0 3px #f53c3c;
+}
+
+#cpu {
+	color: #2ecc71;
+	text-shadow: 0 0 3px #2ecc71;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#cpu:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#memory {
+	color: #cba6f7;
+	text-shadow: 0 0 3px #cba6f7;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#memory:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#disk {
+	color: #b4befe;
+	text-shadow: 0 0 3px #b4befe;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#disk:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#temperature {
+	color: #fab387;
+	text-shadow: 0 0 3px #fab387;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	margin-right: 0px;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#temperature:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#temperature.critical {
+	color: #1e1e2e;
+	background-color: #f38ba8;
+	text-shadow: 0 0 3px #f38ba8;
+	transition: 0.5s;
+}
+
+#backlight {
+	color: #a6e3a1;
+	text-shadow: 0 0 3px #a6e3a1;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#backlight:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#pulseaudio {
+	color: #fab387;
+	text-shadow: 0 0 3px #fab387;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#pulseaudio:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+    text-shadow: 0 0 3px #f38ba8;
+}
+
+#custom-play-prev {
+	color: #66cc99;
+	text-shadow: 0 0 3px #66cc99;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	border-radius: 50%;
+	margin: 5px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	padding: 0 10px;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#custom-play-prev:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#custom-play-toggle {
+	color: #66cc99;
+	text-shadow: 0 0 3px #66cc99;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding: 0 10px;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#custom-play-toggle:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#custom-play-next {
+	color: #66cc99;
+	text-shadow: 0 0 3px #66cc99;
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	border-radius: 50%;
+	margin: 5px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	padding: 0 10px;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#custom-play-next:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+#custom-spotify {
+	color: #66cc99;
+	text-shadow: 0 0 3px #66cc99;
+	/*min-width: 100px;*/
+	background-color: #11111b;
+	border: 3px solid #f5c2e7;
+	margin: 5px;
+	padding: 0 10px;
+	transition: 0.5s;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#custom-spotify:hover {
+	background-color: #2a2431;
+	transition: 0.5s;
+}
+
+/*
+#custom-media.custom-spotify {
+    color: #66cc99;
+    text-shadow: 0 0 3px #66cc99;
+}
+
+#custom-media.custom-vlc {
+    color: #fab387;
+    text-shadow: 0 0 3px #fab387;
+}
+*/
+
+#image {
+	border: solid 3px #f5c2e7;
+	margin: 5px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+#user {
+	color: #f5c2e7;
+	margin-left: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: #1e1e2e;
+	border-left: 3px solid #f5c2e7;
+	border-top: 3px solid #f5c2e7;
+	border-right: none;
+	border-bottom: 3px solid #f5c2e7;
+	border-radius: 10px 0px 0px 10px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#custom-desktopname {
+	color: #f5c2e7;
+	margin-left: 0px;
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: #1e1e2e;
+	border-left: none;
+	border-top: 3px solid #f5c2e7;
+	border-right: 3px solid #f5c2e7;
+	border-bottom: 3px solid #f5c2e7;
+	border-radius: 0px 10px 10px 0px;
+	box-shadow: 6px 0px 4px rgba(0, 0, 0, 0.9);
+}
+
+#mode {
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  margin-top: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#idle_inhibitor {
+  color: #2d3436;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#idle_inhibitor.activated {
+    color: #ecf0f1;
+}
+
+#cava {
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  color: #89b4fa;
+}
+
+#custom-mpd-label {
+  color: #89b4fa;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#custom-mpdprev {
+  font-size: 17px;
+  color: #89b4fa;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  border-radius: 10px 0px 0px 10px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  margin-right: 0px;
+}
+
+#custom-mpdtoggle {
+  font-size: 17px;
+  color: #89b4fa;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#custom-mpdnext {
+  font-size: 17px;
+  color: #89b4fa;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  border-radius: 0px 10px 10px 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  margin-right: 4px;
+}
+
+#mpd {
+  color: #a6e3a1;
+  text-shadow: 0 0 3px #a6e3a1;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  padding: 0 10px;
+  color: #cdd6f4;
+}
+
+#mpd.disconnected {
+    color: #f38ba8;
+    text-shadow: 0 0 3px #f38ba8;
+}
+
+#mpd.stopped {
+    color: #51a37a;
+    text-shadow: 0 0 3px #51a37a;
+}
+
+#mpd.paused {
+    color: #51a37a;
+    text-shadow: 0 0 3px #51a37a;
+}
+
+#mpris {
+  color: #a6e3a1;
+  text-shadow: 0 0 3px #a6e3a1;
+  background-color: #11111b;
+  border: 2px solid #f5c2e7;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  color: #cdd6f4;
+}
+
+#mpris.stopped {
+    color: #90b1b1;
+    text-shadow: 0 0 3px #90b1b1;
+}
+
+#mpris.paused {
+    color: #51a37a;
+    text-shadow: 0 0 3px #51a37a;
+}
+
+#window,
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#language {
+    color: #00b093;
+    text-shadow: 0 0 3px #00b093;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    color: #97e1ad;
+    text-shadow: 0 0 3px #97e1ad;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
