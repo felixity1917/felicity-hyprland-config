@@ -379,6 +379,57 @@ window#waybar.empty {
     text-shadow: 0 0 3px #f38ba8;
 }
 
+#custom-play-prev {
+  color: #66cc99;
+  text-shadow: 0 0 3px #66cc99;
+  background-color: #11111b;
+  border-bottom: 2px solid #f5c2e7;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+
+#custom-play-prev:hover {
+  background-color: #2a2431;
+  transition: 0.5s;
+}
+
+#custom-play-toggle {
+  color: #66cc99;
+  text-shadow: 0 0 3px #66cc99;
+  background-color: #11111b;
+  border-bottom: 2px solid #f5c2e7;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+
+#custom-play-toggle:hover {
+  background-color: #2a2431;
+  transition: 0.5s;
+}
+
+#custom-play-next {
+  color: #66cc99;
+  text-shadow: 0 0 3px #66cc99;
+  background-color: #11111b;
+  border-bottom: 2px solid #f5c2e7;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+
+#custom-play-next:hover {
+  background-color: #2a2431;
+  transition: 0.5s;
+}
+
 #custom-spotify {
   color: #66cc99;
   text-shadow: 0 0 3px #66cc99;

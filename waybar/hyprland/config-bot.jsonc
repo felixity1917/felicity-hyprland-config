@@ -1,0 +1,207 @@
+// Author: Felicity Iris
+{
+    "layer": "bottom", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 35, // Waybar height (to be removed for auto height)
+    "width": 1900, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [ "user", "custom/desktopname" ],
+    "modules-center": [ "custom/play-prev", "custom/spotify", "custom/play-next" ],
+    "modules-right": [ "battery", "backlight", "pulseaudio", "cpu", "memory", "disk", "temperature" ],
+
+    //Modules configuration
+
+	// "custom/play-toggle": {
+	// 	"exec": "$XDG_CONFIG_HOME/waybar/hyprland/scripts/playerctl-spotify.zsh next",
+	// 	"format": "󰐊" 
+	// },
+
+	"custom/play-prev": {
+		"on-click": "playerctl -p spotify previous",
+		"format": "󰒮"
+	},
+
+	"custom/spotify": {
+		"exec": "$XDG_CONFIG_HOME/waybar/hyprland/scripts/playerctl-spotify.zsh",
+		"format": "  {} ",
+		"max-length": 80,
+		"return-type": "json",
+		"interval": 1,
+		"on-click": "playerctl -p spotify play-pause",
+	},
+
+	"custom/play-next": {
+		"on-click": "playerctl -p spotify next",
+		"format": "󰒭"
+	},
+
+    "custom/mpd-label": {
+        "format": "   MPD ",
+        "interval": "once",
+        "tooltip": false 
+      },
+
+    "custom/mpdprev": {
+        "format": " 󰼨 ",
+        "interval": "once",
+        "tooltip": true,
+        "tooltip-format": "Skip to Previous Song",
+        "on-click": "mpc prev"
+      },
+    
+    "custom/mpdtoggle": {
+        "exec": "mpc-play-status",
+        "interval": 1,
+        "format": " {} ",
+        "on-click": "mpc toggle"
+      },
+
+    "custom/mpdnext": {
+        "format": " 󰼧 ",
+        "interval": "once",
+        "tooltip": true,
+        "tooltip-format": "Skip to Next Song",
+        "on-click": "mpc next"
+      },
+
+    "mpd": {
+        "server": "$XDG_CONFIG_HOME/mpd/socket",
+        
+        //"format": "  MPD {stateIcon} {consumeIcon}{repeatIcon}{singleIcon} | [{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | {filename}",
+        //"format-paused": "  MPD {stateIcon} {consumeIcon}{repeatIcon}{singleIcon} | [{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | {filename}",
+        //"format-alt": "  MPD {stateIcon} {consumeIcon}{repeatIcon}{singleIcon} | [{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | [{songPosition} | {queueLength}] |  {volume}%",
+        //"format-disconnected": "  MPD Disconnected",
+        //"format-stopped": "  MPD {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped",
+        
+        "format": "[{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | {filename}",
+        "format-paused": "[{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | {filename}",
+        "format-alt": "[{elapsedTime:%H:%M:%S} / {totalTime:%H:%M:%S}] | [{songPosition} / {queueLength}] |  {volume}%",
+        "format-disconnected": "Disconnected",
+        "format-stopped": "Stopped",
+        "unknown-tag": "N/A",
+        "interval": 1,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            //"off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "max-length": 90
+        //"on-click-right": "mpc toggle"
+    },
+
+    "mpris": {
+	      "format": "DEFAULT: {player_icon} {dynamic}",
+	      "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+        "interval": "1",
+	      "player-icons": {
+		        "default": "▶",
+		        "mpv": "🎵"
+	      },
+	      "status-icons": {
+		        "paused": "⏸"
+	      },
+	      // "ignored-players": ["firefox"]
+    },
+
+    "custom/desktopname": {
+        "format": "•  Hyprland",
+      },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "cpu": {
+        "format": "    {usage}%",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "memory": {
+        "format": "    {}%",
+        "interval": 2
+    },
+
+    "disk": {
+        "format": "    {percentage_used}%",
+        "format-alt": "    {used} / {total}",
+        "tooltip": true,
+        "tooltip-format": "{free} free + {used} used out of {total} on {path}",
+        "path": "/",
+        "interval": 15
+      },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{icon}    {temperatureC}°C",
+        "format": "{icon}    {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}    {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}    {capacity}%",
+        "format-charging": "    {capacity}%",
+        "format-plugged": "    {capacity}%",
+        "format-alt": " {icon}    {time}",
+        "format-full": "    VOLL",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "battery#bat0": {
+        "bat": "BAT0"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 2, // %, can be a float
+        "format": "{icon}    {volume}%",
+        "format-bluetooth": "{icon}    {volume}%",
+        "format-bluetooth-muted": "󰝟 ",
+        "format-muted": "󰝟",
+        // "format-source": "{volume}% ",
+        // "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+}
+
