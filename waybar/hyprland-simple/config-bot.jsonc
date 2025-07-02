@@ -2,7 +2,7 @@
 {
     "layer": "bottom", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 35, // Waybar height (to be removed for auto height)
+    // "height": 30, // Waybar height (to be removed for auto height)
     "width": 1900, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -120,7 +120,7 @@
 
 	"image": {
 		"path": "/home/felicity/.face_rounded",
-		"size": 32,
+		"size": 28,
 	},
 
 	"user": {

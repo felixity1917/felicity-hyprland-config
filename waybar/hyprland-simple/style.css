@@ -246,6 +246,8 @@ window#waybar.empty #window {
 	margin: 5px;
 	padding-left: 0.75em;
 	padding-right: 0.75em;
+	padding-top: 0px;
+	padding-bottom: 0px;
 	transition: 0.5s;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
 }
@@ -399,8 +401,8 @@ window#waybar.empty #window {
 	border: 3px solid #f5c2e7;
 	border-radius: 50%;
 	margin: 5px;
-	margin-top: 7px;
-	margin-bottom: 7px;
+	margin-top: 6px;
+	margin-bottom: 6px;
 	padding: 0 10px;
 	transition: 0.5s;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
@@ -434,8 +436,8 @@ window#waybar.empty #window {
 	border: 3px solid #f5c2e7;
 	border-radius: 50%;
 	margin: 5px;
-	margin-top: 7px;
-	margin-bottom: 7px;
+	margin-top: 6px;
+	margin-bottom: 6px;
 	padding: 0 10px;
 	transition: 0.5s;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
@@ -453,7 +455,7 @@ window#waybar.empty #window {
 	background-color: #11111b;
 	border: 3px solid #f5c2e7;
 	margin: 5px;
-	padding: 0 10px;
+	padding: 0 5px;
 	transition: 0.5s;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
 }
