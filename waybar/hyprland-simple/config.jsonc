@@ -1,82 +1,81 @@
 // Author: Felicity Iris
 {
-    "layer": "bottom", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    //"height": 10, // Waybar height (to be removed for auto height)
-    "width": 1900, // Waybar width
-    "spacing": 0, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": ["hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": [ "network#updown", "network#net", "clock#time", "clock#date", "clock#day", "tray" ],
-    
-
-  // Modules configuration
-
-  "hyprland/workspaces": {
-	"format":"{icon}",
-	"format-icons": {
-		"1": "I", 
-		"2": "II", 
-		"3": "III",
-		"4": "IV",
-		"5": "V",
-		"6": "VI",
-		"7": "VII",
-		"8": "VIII",
-		"9": "IX",
-		"10": "X",
-	},
+	"layer": "bottom", // Waybar at top layer
+	"position": "top", // Waybar position (top|bottom|left|right)
+	//"height": 10, // Waybar height (to be removed for auto height)
+	"width": 1900, // Waybar width
+	"spacing": 0, // Gaps between modules (4px)
+	// Choose the order of the modules
+	"modules-left": [
+		"hyprland/window"
+	],
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+	"modules-right": [
+		"network#updown",
+		"network#net",
+		"clock#time",
+		"clock#date",
+		"clock#day",
+		"tray"
+	],
+	// Modules configuration
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"1": "I",
+			"2": "II",
+			"3": "III",
+			"4": "IV",
+			"5": "V",
+			"6": "VI",
+			"7": "VII",
+			"8": "VIII",
+			"9": "IX",
+			"10": "X",
+		},
 		"disable-click": false
-  },
-
+	},
 	"hyprland/window": {
 		"format": " {} ",
 		"max-length": 98,
 		"tooltip": true,
 		"icon": true
 	},
-
 	"tray": {
 		"icon-size": 20,
 		"spacing": 2
 	},
-
-    "clock#time": {
-        "interval": 1,
-        "timezone": "Asia/Kolkata",
-        "format": "   {:L%H:%M:%S}"
-    },
-
-    "clock#date": {
-        "interval": 1,
-        "timezone": "Asia/Kolkata",
-        "format": "   {:L%Y-%m-%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-
-    "clock#day": {
-        "interval": 1,
-        "timezone": "Asia/Kolkata",
-        "format": "{:L%A}"
-    },
-
-    "network#net": {
-        "interval": 1,
-        "format-wifi": "    Verbunden [{frequency}Hz] [{signalStrength}%] ",
-        "format-ethernet": "    Verbunden {cidr} ",
-        "tooltip-format": "    Verbunden über {gwaddr} ",
-        "format-linked": "    Verbunden (No IP) ",
-        "format-disconnected": "    Getrennt ",
-        "format-alt": "   {essid} {ifname}: {ipaddr}/{cidr}"
-    },
-
-    "network#updown": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "interval": 1,
-        "format-wifi": "  {bandwidthUpBits}    {bandwidthDownBits}",
-        "format-disconnected": "  ---    ---"
-    },
-
+	"clock#time": {
+		"interval": 1,
+		"timezone": "Asia/Kolkata",
+		"format": "   {:L%H:%M:%S}"
+	},
+	"clock#date": {
+		"interval": 1,
+		"timezone": "Asia/Kolkata",
+		"format": "   {:L%Y-%m-%d}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"clock#day": {
+		"interval": 1,
+		"timezone": "Asia/Kolkata",
+		"format": "{:L%A}"
+	},
+	"network#net": {
+		"interval": 1,
+		"format-wifi": "    Verbunden [{frequency}Hz] [{signalStrength}%] ",
+		"format-ethernet": "    Verbunden {cidr} ",
+		"tooltip-format": "    Verbunden über {gwaddr} ",
+		"format-linked": "    Verbunden ",
+		"format-disconnected": "    Getrennt ",
+		"format-alt": "   {essid} {ifname}: {ipaddr}/{cidr}"
+	},
+	"network#updown": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"interval": 1,
+		"format-wifi": "  {bandwidthUpBytes}    {bandwidthDownBytes}",
+		"format-disconnected": "  ---    ---"
+	},
 }
-

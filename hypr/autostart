@@ -16,15 +16,20 @@ bash ~/gtkset.sh &
 ## Setup XWayland
 xhost si:localuser:root &
 
+XDG_MENU_PREFIX=arch- kbuildsycoca6
+
 ## Setup Display
 # wlr-randr --output eDP --preferred &
-way-displays >/tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
+run way-displays >/tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
 
 ## Fancy Wallpaper Daemon with Animation Support
-rm ~/.cache/swww/eDP-1 &
-swww-daemon &
+# rm ~/.cache/swww/eDP-1 &
+# swww-daemon &
 # sleep 1s && swww img ~/Pictures/CTP-Walls/ctp-wall-arch.png --transition-type wipe --transition-angle 30 --transition-step 120 &
-sleep 1s && swww img ~/Pictures/Wallpapers/toriiWallpaper.png --transition-type grow --transition-pos 0.854,0.977 --transition-step 120 &
+# sleep 1s && swww img ~/Pictures/Wallpapers/toriiWallpaper.png --transition-type grow --transition-pos 0.854,0.977 --transition-step 120 &
+
+## Live Wallpaper
+run mpvpaper -f -o "no-audio --loop-playlist" ALL Videos/Wallpaper/mount-fuji-torii-sunset-moewalls-com_1920x1080.mp4
 
 ## Polkit GUI
 run /usr/lib/polkit-kde-authentication-agent-1 &
